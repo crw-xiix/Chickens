@@ -24,6 +24,7 @@ HEATER out -> Relay
 DOOR CLOSE -> Relay 1
 DOOR OPEN -> Relay 2
 
-
+//Light Controller - Extend daylight hours
+// Slowly ramp up, PWM lights on at specific time until sunrise
 
 
