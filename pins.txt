@@ -1,0 +1,18 @@
+
+//Temp guages
+I2C C
+I2C D
+
+//This is for MODBUS communication with the charge controller
+SERIAL Clock
+SERIAL Data
+
+DISTANCE OUT
+DISTANCE IN
+
+//WIFI
+//Didn't look yet for pins it uses
+
+
+
+
