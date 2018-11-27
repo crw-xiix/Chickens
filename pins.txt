@@ -20,8 +20,9 @@ WATERPUMP out -> Relay
 //Heater
 HEATER out -> Relay
 
-
-
+//Door Operator 
+DOOR CLOSE -> Relay 1
+DOOR OPEN -> Relay 2
 
 
 
