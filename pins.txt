@@ -1,17 +1,27 @@
 
 //Temp guages
-I2C C
-I2C D
+I2C Clock
+I2C Data
 
 //This is for MODBUS communication with the charge controller
 SERIAL Clock
 SERIAL Data
 
+//Water Level meter
 DISTANCE OUT
 DISTANCE IN
 
 //WIFI
 //Didn't look yet for pins it uses
+
+//Water pump
+WATERPUMP out -> Relay
+
+//Heater
+HEATER out -> Relay
+
+
+
 
 
 
