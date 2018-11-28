@@ -1,6 +1,7 @@
 #include <ESP8266WiFi.h>
-#include <Wire.h>
+//#include <Wire.h>
 #include "wifi.h"
+#include "gsender.h"
 
 
 #define i2cSCL 1
@@ -17,11 +18,11 @@ void setup() {
   Serial.begin(74880);
   delay(10);
 
-  Wire.begin(1,2);
+  //Wire.begin(1,2);
  
   Serial.println("Connecting to ");
   delay(1000);
-  Serial.println("Connecting to ");
+
   
   
   pinMode(ledPin, OUTPUT);
@@ -52,13 +53,22 @@ void setup() {
   Serial.print("http://");
   Serial.print(WiFi.localIP());
   Serial.println("/");
+
+  Gsender *gsender = Gsender::Instance();    // Getting pointer to class instance
+    String subject = "ESP8285 Chicken Monitoring System";
+    if(gsender->Subject(subject)->Send("charles@loneaspen.com", "The system has been restarted after a power down.")) {
+        Serial.println("Message send.");
+    } else {
+        Serial.print("Error sending message: ");
+        Serial.println(gsender->getError());
+    }
   
 }
 
 void loop() {
   // Check if a client has connected
 
-  Serial.println("Waiting...");
+  //Serial.println("Waiting...");
   WiFiClient client = server.available();
   if (!client) {
     return;
