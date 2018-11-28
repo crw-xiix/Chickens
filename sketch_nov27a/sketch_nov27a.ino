@@ -57,7 +57,7 @@ void setup() {
   Gsender *gsender = Gsender::Instance();    // Getting pointer to class instance
     String subject = "ESP8285 Chicken Monitoring System";
     if(gsender->Subject(subject)->Send("charles@loneaspen.com", "The system has been restarted after a power down.")) {
-        Serial.println("Message send.");
+        Serial.println("Message sent.");
     } else {
         Serial.print("Error sending message: ");
         Serial.println(gsender->getError());
@@ -127,7 +127,7 @@ client.println("<html lang=\"en\">");
 client.println("</div>");
         
   client.println("<br><br>");
-//class=\"btn btn-info\" role=\"button\"
+
   
   client.println("<div>Toggle the LED</div>");
   client.println("<a class=\"btn btn-success\" role=\"button\"  href=\"/LED=ON\">On</a>");
@@ -139,42 +139,8 @@ client.println("</div>");
   client.println("</body>");
   client.println("</html>");
 
-/*
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    */
-  client.println("</body>");
-client.println("</html>");
 
 
-
-
-  /*
-  client.println("HTTP/1.1 200 OK");
-  client.println("Content-Type: text/html");
-  client.println(""); // do not forget this one
-  client.println("<!DOCTYPE HTML>");
-  client.println("<html>");
-
-  client.print("Led pin is now: ");
-
-  if(value == HIGH) {
-    client.print("On");
-  } else {
-    client.print("Off");
-  }
-  client.println("<br><br>");
-  client.println("Click <a href=\"/LED=ON\">here</a> turn the LED on pin 2 ON<br>");
-  client.println("Click <a href=\"/LED=OFF\">here</a> turn the LED on pin 2 OFF<br>");
-  client.println("</html>");
-
-  delay(1);
-  Serial.println("Client disonnected");
-  Serial.println("");
-  */
 }
 
   
