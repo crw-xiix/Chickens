@@ -1,5 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <Wire.h>
+#include "wifi.h"
 
 
 #define i2cSCL 1
@@ -27,13 +28,14 @@ void setup() {
 
   WiFi.mode(WIFI_STA);
   
-  WiFi.hostname("Chicken");
+  WiFi.hostname(wifiHostName);
 
   Serial.println();
   Serial.println();
   Serial.print("Connecting to ");
   
-  WiFi.begin("Wood","slipperywhendusty");
+  WiFi.begin(wifiNetwork,wifiPassword);
+  
   while (WiFi.status() != WL_CONNECTED) {
     digitalWrite(ledPin, LOW);
     delay(250);
